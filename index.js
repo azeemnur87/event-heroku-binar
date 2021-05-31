@@ -17,6 +17,6 @@ app.post('/login', authMiddleware.authValidation, authController.login)
 app.post('/event', tokenMiddleware.verifyToken, eventController.create)
 // app.get('/event', tokenMiddleware.verifyToken, eventController.get)
 
-app.listen(3002, () => {
-  console.log('SERVER IS RUNNING ON PORT 3002')
+app.listen(process.env.PORT || 3002, () => {
+  console.log('SERVER IS RUNNING')
 })
